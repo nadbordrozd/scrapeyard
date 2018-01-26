@@ -1,0 +1,4 @@
+awscli==1.14.11
+Django==1.11.8
+image==1.5.17
+Scrapy==1.4.0
