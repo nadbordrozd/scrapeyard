@@ -9,16 +9,16 @@
 #     http://scrapy.readthedocs.org/en/latest/topics/downloader-middleware.html
 #     http://scrapy.readthedocs.org/en/latest/topics/spider-middleware.html
 
-LOG_LEVEL = 'DEBUG'
+LOG_LEVEL = 'INFO'
 DOWNLOAD_DELAY = 0.3
 
-FEED_URI = 's3://wladyslaw/polyvore/items.jsonlines'
+FEED_URI = 's3://scrapeyard/polyvore2/items.jsonlines'
 # FEED_URI = '/Users/nadbordrozd/workspace/scrapeyard/dataitems.jsonlines'
 FEED_FORMAT = 'jsonlines'
 FEED_EXPORT_FIELDS = ['title', 'price', 'breadcrumbs', 'orig_price', 'out_url', 'description', 'url']
 
 ITEM_PIPELINES = {'scrapy.pipelines.images.ImagesPipeline': 1}
-IMAGES_STORE = 's3://wladyslaw/polyvore/images'
+IMAGES_STORE = 's3://scrapeyard/polyvore2/images'
 # IMAGES_STORE = '/Users/nadbordrozd/workspace/scrapeyard/data/images'
 
 shell = 'ipython'

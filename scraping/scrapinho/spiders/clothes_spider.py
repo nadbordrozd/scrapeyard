@@ -24,11 +24,9 @@ class ClothesSpider(scrapy.Spider):
     name = "clothes"
 
     def start_requests(self):
-        urls = ['https://www.polyvore.com/outfits/?p=%s' % i for i in range(100, 1000)]
+        urls = ['https://www.polyvore.com/outfits/?p=%s' % i for i in range(100, 120)]
         for i, url in enumerate(urls):
             yield scrapy.Request(url=url, callback=self.parse_listing)
-
-            break
 
     def parse_listing(self, response):
         product_links = response.css('div .grid_item.hover_container.type_thing.span1w.span1h div.main a::attr(href)') \
